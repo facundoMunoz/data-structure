@@ -72,11 +72,9 @@ public class ArbolBin {
 	}
 
 	public int altura() {
-		int altura = 0;
 
-		altura = this.getCantNiveles(this.raiz, altura);
+		return this.getCantNiveles(this.raiz, 0);
 
-		return altura;
 	}
 
 	private int getCantNiveles(NodoArbol nodo, int nivel) {
@@ -92,11 +90,9 @@ public class ArbolBin {
 	}
 
 	public int nivel(Object elemento) {
-		int nivel;
 
-		nivel = buscarNivel(this.raiz, 0, elemento);
+		return buscarNivel(this.raiz, 0, elemento);
 
-		return nivel;
 	}
 
 	private int buscarNivel(NodoArbol nodo, int nivel, Object elemento) {
@@ -120,11 +116,9 @@ public class ArbolBin {
 	}
 
 	public Object padre(Object elemento) {
-		Object padre = null;
 
-		padre = buscarPadre(this.raiz, elemento, padre);
+		return buscarPadre(this.raiz, elemento, null);
 
-		return padre;
 	}
 
 	private Object buscarPadre(NodoArbol nodo, Object hijo, Object padre) {
@@ -270,14 +264,11 @@ public class ArbolBin {
 
 		if (raiz != null) {
 			if (raiz.getIzquierdo() == null && raiz.getDerecho() == null) {
+				// Si estamos en una hoja lo agrega a la lista
 				lista.insertar(raiz.getElem(), lista.longitud() + 1);
 			} else {
-				if (raiz.getIzquierdo() != null) {
-					fronteraAux(raiz.getIzquierdo(), lista);
-				}
-				if (raiz.getDerecho() != null) {
-					fronteraAux(raiz.getDerecho(), lista);
-				}
+				fronteraAux(raiz.getIzquierdo(), lista);
+				fronteraAux(raiz.getDerecho(), lista);
 			}
 		}
 

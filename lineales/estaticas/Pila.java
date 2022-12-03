@@ -14,11 +14,10 @@ public class Pila {
 
 	// Modificadores
 	public boolean apilar(Object nuevoElem) {
-		boolean exito;
+		boolean exito = false;
 
-		if (this.tope == Pila.TAMANIO - 1) {
-			exito = false;
-		} else {
+		if (this.tope != Pila.TAMANIO - 1) {
+			// Si no estamos en el tope podemos apilar
 			this.tope++;
 			this.arreglo[tope] = nuevoElem;
 			exito = true;
@@ -28,11 +27,10 @@ public class Pila {
 	}
 
 	public boolean desapilar() {
-		boolean exito;
+		boolean exito = false;
 
-		if (this.tope == -1) {
-			exito = false;
-		} else {
+		if (!this.esVacia()) {
+			// Si quedan elementos podemos desapilar
 			this.arreglo[tope] = null;
 			this.tope--;
 			exito = true;
@@ -45,7 +43,8 @@ public class Pila {
 	public Object obtenerTope() {
 		Object objeto = null;
 
-		if (this.tope > -1) {
+		if (!this.esVacia()) {
+			// tope puede ser -1, fuera del rango del arreglo
 			objeto = this.arreglo[tope];
 		}
 

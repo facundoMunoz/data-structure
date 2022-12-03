@@ -6,6 +6,7 @@ public class ArbolBB {
 
 	private NodoABB raiz;
 
+	// Observadores
 	public boolean pertenece(Comparable buscado) {
 		boolean encontrado = false;
 
@@ -34,6 +35,7 @@ public class ArbolBB {
 		return encontrado;
 	}
 
+	// Modificadores
 	public boolean insertar(Comparable nuevo) {
 		boolean exito;
 
@@ -116,12 +118,7 @@ public class ArbolBB {
 
 	private void eliminarUnicoHijo(NodoABB padre, NodoABB hijo, Comparable buscado) {
 
-		NodoABB subArbol;
-		if (hijo.getDerecho() != null) {
-			subArbol = hijo.getDerecho();
-		} else {
-			subArbol = hijo.getIzquierdo();
-		}
+		NodoABB subArbol = (hijo.getDerecho() != null) ? hijo.getDerecho() : hijo.getIzquierdo();
 
 		if (padre != null) {
 			if (padre.getDerecho() != null && buscado.compareTo(padre.getDerecho().getElem()) == 0) {
@@ -155,6 +152,7 @@ public class ArbolBB {
 
 	}
 
+	// Propias del tipo
 	private NodoABB buscarPadreNodoMinimo(NodoABB nodo) {
 		NodoABB encontrado = nodo;
 

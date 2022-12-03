@@ -6,6 +6,7 @@ public class NodoArbol {
 	private NodoArbol izquierdo;
 	private NodoArbol derecho;
 
+	// Constructores
 	public NodoArbol(Object unElemObject) {
 
 		this.elemento = unElemObject;
@@ -20,6 +21,7 @@ public class NodoArbol {
 
 	}
 
+	// Observadores
 	public Object getElem() {
 
 		return this.elemento;
@@ -38,6 +40,7 @@ public class NodoArbol {
 
 	}
 
+	// Modificadores
 	public void setElem(Object nuevoElemento) {
 
 		this.elemento = nuevoElemento;

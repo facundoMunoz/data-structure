@@ -7,7 +7,7 @@ public class Cola {
 	private int frente;
 	private int fin;
 
-	// Constructores
+	// Constructor
 	public Cola() {
 
 		arreglo = new Object[TAMANIO];
@@ -44,13 +44,9 @@ public class Cola {
 
 	// Observadores
 	public Object obtenerFrente() {
-		Object objeto = null;
 
-		if (this.arreglo[frente] != null) {
-			objeto = this.arreglo[frente];
-		}
+		return this.arreglo[frente];
 
-		return objeto;
 	}
 
 	public boolean esVacia() {

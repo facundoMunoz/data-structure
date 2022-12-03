@@ -4,12 +4,14 @@ public class Lista {
 
 	private Nodo cabecera;
 
+	// Constructor
 	public Lista() {
 
 		this.cabecera = null;
 
 	}
 
+	// Modificadores
 	public boolean insertar(Object elemento, int posicion) {
 		boolean exito = false;
 
@@ -53,6 +55,7 @@ public class Lista {
 		return exito;
 	}
 
+	// Observadores
 	public Object recuperar(int posicion) {
 		Object elemento = null;
 		int iteracion = 1;
@@ -106,6 +109,7 @@ public class Lista {
 
 	}
 
+	// Propias del tipo
 	public void vaciar() {
 
 		this.cabecera = null;
@@ -115,15 +119,18 @@ public class Lista {
 	@Override
 	public Lista clone() {
 		Lista clon = new Lista();
-		Nodo nodoAdelante = this.cabecera;
-		clon.cabecera = new Nodo(nodoAdelante.getElemento(), null);
-		nodoAdelante = nodoAdelante.getEnlace();
-		Nodo nodoAtras = clon.cabecera;
 
-		while (nodoAdelante != null) {
-			nodoAtras.setEnlace(new Nodo(nodoAdelante.getElemento(), null));
-			nodoAtras = nodoAtras.getEnlace();
+		if (!this.esVacia()) {
+			Nodo nodoAdelante = this.cabecera;
+			clon.cabecera = new Nodo(nodoAdelante.getElemento(), null);
 			nodoAdelante = nodoAdelante.getEnlace();
+			Nodo nodoAtras = clon.cabecera;
+
+			while (nodoAdelante != null) {
+				nodoAtras.setEnlace(new Nodo(nodoAdelante.getElemento(), null));
+				nodoAtras = nodoAtras.getEnlace();
+				nodoAdelante = nodoAdelante.getEnlace();
+			}
 		}
 
 		return clon;

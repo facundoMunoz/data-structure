@@ -287,13 +287,8 @@ public class ArbolGen {
 			// Visita n
 			ls.insertar(n.getElem(), ls.longitud() + 1);
 			// Llama a los demas hijos
-			if (n.getHijoIzquierdo() != null) {
-				NodoGen hijo = n.getHijoIzquierdo();
-				while (hijo != null) {
-					listarPreordenAux(hijo, ls);
-					hijo = hijo.getHermanoDerecho();
-				}
-			}
+			listarPreordenAux(n.getHijoIzquierdo(), ls);
+			listarPreordenAux(n.getHermanoDerecho(), ls);
 		}
 	}
 
@@ -382,7 +377,7 @@ public class ArbolGen {
 	private int gradoAux(NodoGen nodo, int mayor) {
 
 		if (nodo != null) {
-			// Cada vez que baja a un hijo "resetea" el contador
+			// Cada vez que baja a un hijo reinicia el contador
 			int hijo = 0;
 			if (nodo.getHijoIzquierdo() != null) {
 				hijo = gradoAux(nodo.getHijoIzquierdo(), 1);
@@ -585,6 +580,30 @@ public class ArbolGen {
 			}
 		}
 		return resultado;
+	}
+
+	public boolean sonFrontera(Lista lista) {
+		Lista clon = lista.clone();
+
+		this.sonFronteraAux(this.raiz, clon);
+
+		return clon.esVacia();
+	}
+
+	private void sonFronteraAux(NodoGen nodo, Lista lista) {
+		// Precondición: lista no debe tener elementos repetidos
+
+		if (nodo != null) {
+			if (nodo.getHijoIzquierdo() == null) {
+				// Si es un hijo verificamos que pertenezca a la lista
+				lista.eliminar(lista.localizar(nodo.getElem()));
+			}
+			if (!lista.esVacia()) {
+				// Recorre en preorden si sigue sin verificar la lista
+				this.sonFronteraAux(nodo.getHijoIzquierdo(), lista);
+				this.sonFronteraAux(nodo.getHermanoDerecho(), lista);
+			}
+		}
 	}
 
 	// Testing

@@ -21,7 +21,7 @@ public class Pila {
 	public boolean desapilar() {
 		boolean exito;
 
-		if (this.tope == null) {
+		if (this.esVacia()) {
 			exito = false;
 		} else {
 			this.tope = this.tope.getEnlace();
@@ -35,7 +35,7 @@ public class Pila {
 	public Object obtenerTope() {
 		Object elemento = null;
 
-		if (this.tope != null) {
+		if (!this.esVacia()) {
 			elemento = this.tope.getElemento();
 		}
 

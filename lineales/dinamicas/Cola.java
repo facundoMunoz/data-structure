@@ -17,12 +17,13 @@ public class Cola {
 	public boolean poner(Object nuevoElem) {
 		Nodo nuevoNodo = new Nodo(nuevoElem, null);
 
-		if (!this.esVacia()) {
-			this.fin.setEnlace(nuevoNodo);
-			this.fin = this.fin.getEnlace();
-		} else {
+		if (this.esVacia()) {
+			// Si está vacía el nodo es el nuevo frente y fin
 			this.fin = nuevoNodo;
 			this.frente = nuevoNodo;
+		} else {
+			this.fin.setEnlace(nuevoNodo);
+			this.fin = this.fin.getEnlace();
 		}
 
 		return true;
@@ -46,11 +47,10 @@ public class Cola {
 
 	// Obesrvadores
 	public Object obtenerFrente() {
-		Object elementoFrente;
+		Object elementoFrente = null;
 
-		if (this.esVacia()) {
-			elementoFrente = null;
-		} else {
+		if (!this.esVacia()) {
+			// Si no tiene frente getElemento() da null pointer
 			elementoFrente = this.frente.getElemento();
 		}
 
@@ -65,8 +65,8 @@ public class Cola {
 
 	// Propias del tipo
 	public void vaciar() {
-		// Deja que se lleve los nodos el garbage collector
 
+		// Deja que se lleve los nodos el garbage collector
 		this.fin = null;
 		this.frente = null;
 
