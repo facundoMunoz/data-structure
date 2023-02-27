@@ -1,23 +1,62 @@
-<h1 align='center'> Estructura de Datos </h1>
+<!-- SUMMARY -->
+<div align="center">
 
----
+# Data Structure
 
-## :pushpin: Acerca de
-<div>
-&nbsp;&nbsp; Este repositorio contiene estructuras de datos implementadas para la materia "Estructura de Datos" de segundo año de la Licenciatura en Ciencias de la Computación
+Java based implementations of popular algorithms and data structures
+
+[![Licence][license-shield]](./LICENSE)
+
 </div>
 
-## :open_file_folder: Estructuras
-### Lineales
-- Pila
-- Cola
-- Lista
-### Jerárquicas
-- Árbol Binario
-- Árbol Genérico
-### Conjuntistas
-- Árbol Heap
-- Árbol Binario de Búsqueda
-- Árbol Auto-Balanceado AVL
-- Tabla Hash
-### Y varios Test!
+<!-- CONTENTS -->
+<details> <summary> Table of Contents </summary>
+
+- [Built With](#built-with)
+- [Usage](#usage)
+- [Implemented Structures](#implemented-structures)
+- [Contact](#contact)
+
+</details>
+
+<!-- BUILT WITH -->
+## Built With
+
+- [![JAVA][java-shield]][java-url]
+
+<!-- USAGE -->
+## Usage
+
+- This project is meant to be used for learning and researching purposes only, and it is not meant to be used for production
+
+<!-- IMPLEMENTED STRUCTURES -->
+## Implemented Structures
+
+- Linear
+   - Stack
+   - Queue
+   - Linked List
+- Non-linear
+   - Binary Tree
+   - Generic Tree
+   - Heap
+   - Binary Search Tree
+   - Self-Balancing Search Tree
+   - Hash Table
+
+<!-- CONTACT -->
+## Contact
+[![GITHUB][personal-shield]][personal-url] [![LINKEDIN][linkedin-shield]][linkedin-url]
+
+<!-- MARKDOWN LINKS AND IMAGES -->
+<!-- BUILT WITH -->
+[java-shield]: https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white
+[java-url]: https://www.java.com/en/
+<!-- LICENSE -->
+[license-shield]: https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge
+<!-- MY GITHUB -->
+[personal-shield]: https://img.shields.io/badge/FACUNDO-MU%C3%91OZ-yellowgreen?style=for-the-badge
+[personal-url]: https://github.com/facundoMunoz
+<!-- MY LINKEDIN -->
+[linkedin-shield]: https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white
+[linkedin-url]: https://www.linkedin.com/in/facundomunoz001/
