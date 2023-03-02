@@ -9,16 +9,6 @@ Java based implementations of popular algorithms and data structures
 
 </div>
 
-<!-- CONTENTS -->
-<details> <summary> Table of Contents </summary>
-
-- [Built With](#built-with)
-- [Usage](#usage)
-- [Implemented Structures](#implemented-structures)
-- [Contact](#contact)
-
-</details>
-
 <!-- BUILT WITH -->
 ## Built With
 
